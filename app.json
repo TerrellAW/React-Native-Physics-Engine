@@ -16,9 +16,14 @@
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.mrbonescode.physicsengine"
     },
-    "web": {
+    "web": {},
+    "extra": {
+      "eas": {
+        "projectId": "229a1f9b-e7dd-44c3-b61b-6cd28635d7f5"
+      }
     }
   }
 }
