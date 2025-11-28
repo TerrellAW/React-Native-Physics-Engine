@@ -59,7 +59,7 @@ export const collisionBoxes = [
     width: screenWidth / 4 + 2, // 2 pixel off the platform
     height: 1,
     x: screenWidth - screenWidth / 4 - 2, // 2 pixel off the platform
-    y: screenHeight - 400,
+    y: screenHeight - 430,
   },
   {
     // Platform bottom
@@ -67,7 +67,7 @@ export const collisionBoxes = [
     width: screenWidth / 4 + 2, // 2 pixel off the platform
     height: 1,
     x: screenWidth - screenWidth / 4 - 2, // 2 pixel off the platform
-    y: screenHeight - 400 + floorHeight / 4 + 5,
+    y: screenHeight - 430 + floorHeight / 4 + 8,
   },
   // {
   //   // Platform side
