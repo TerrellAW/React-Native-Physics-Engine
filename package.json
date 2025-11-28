@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@expo/metro-runtime": "^6.1.2",
+    "eas": "^0.1.0",
+    "eas-cli": "^0.0.0",
     "expo": "^54.0.25",
     "expo-status-bar": "^3.0.8",
     "react": "^19.1.0",
