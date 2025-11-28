@@ -22,9 +22,11 @@ export const collisionBoxes = [
     width: screenWidth,
     height: floorHeight,
     x: 0,
-    y:
+    /* y:
       screenHeight -
       (floorHeight - (Platform.OS === "android" ? 25 : -gapSize)), // Subtract by 25 if Android and add gapSize if on PC
+	*/
+	y: screenHeight - (floorHeight + 5),
   },
   {
     // Ceiling
@@ -32,7 +34,8 @@ export const collisionBoxes = [
     width: screenWidth,
     height: 1,
     x: 0,
-    y: Platform.OS === "android" ? 25 : -gapSize, // Add by 25 if Android and subtract gapSize if on PC
+    //y: Platform.OS === "android" ? 25 : -gapSize, // Add by 25 if Android and subtract gapSize if on PC
+	y: -5,
   },
   {
     // Left wall
