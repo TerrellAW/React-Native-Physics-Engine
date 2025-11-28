@@ -35,3 +35,6 @@ yarn-error.*
 # typescript
 *.tsbuildinfo
 /.vscode
+
+# Vim swap files
+*.swp
