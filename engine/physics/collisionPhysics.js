@@ -18,10 +18,6 @@ export const collisionBoxes = [
     width: screenWidth,
     height: floorHeight,
     x: 0,
-    /* y:
-      screenHeight -
-      (floorHeight - (Platform.OS === "android" ? 25 : -gapSize)), // Subtract by 25 if Android and add gapSize if on PC
-	*/
 	y: screenHeight - (floorHeight + 5),
   },
   {
@@ -30,7 +26,6 @@ export const collisionBoxes = [
     width: screenWidth,
     height: 1,
     x: 0,
-    //y: Platform.OS === "android" ? 25 : -gapSize, // Add by 25 if Android and subtract gapSize if on PC
 	y: -5,
   },
   {
@@ -38,7 +33,7 @@ export const collisionBoxes = [
     type: "leftWall",
     width: 1,
     height: screenHeight,
-    x: 0, // I want to use gapSize but walls are stupid
+    x: 0,
     y: 0,
   },
   {
@@ -46,7 +41,7 @@ export const collisionBoxes = [
     type: "rightWall",
     width: 1,
     height: screenHeight,
-    x: screenWidth - 1, // I want to use gapSize but walls are stupid
+    x: screenWidth - 1,
     y: 0,
   },
   {
@@ -65,14 +60,6 @@ export const collisionBoxes = [
     x: screenWidth - screenWidth / 4 - 2, // 2 pixel off the platform
     y: screenHeight - 430 + floorHeight / 4 + 8,
   },
-  // {
-  //   // Platform side
-  //   type: "rightWall",
-  //   width: 1,
-  //   height: floorHeight / 4 - 6, // 6 pixels smaller than actual height to prevent clipping
-  //   x: screenWidth - screenWidth / 4 + 1, // 1 pixel off the platform,
-  //   y: screenHeight - 400 + 3, // Move down 3 pixels from top to center it
-  // },
 ];
 
 // Collision handler
