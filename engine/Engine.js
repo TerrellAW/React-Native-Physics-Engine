@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 import { Animated, View, Platform } from "react-native";
 
 // Configuration files
-import gapConfig from "./config/gapConfig";
 import physicsConfig from "./config/physicsConfig";
 import playerConfig from "./config/playerConfig";
 import {
@@ -23,9 +22,6 @@ export default function Engine() {
   // Physics variables
   const gravity = physicsConfig.gravity; // Default is 0.2
   const friction = physicsConfig.friction; // Default is 0.98, a 2% speed reduction per frame
-
-  // Platform specific gap size
-  const gapSize = Platform.OS === "web" ? gapConfig.web : gapConfig.default;
 
   // Player collision box
   const playerBox = playerConfig;
@@ -62,8 +58,8 @@ export default function Engine() {
       // Get current player position
       const currentPlayerBox = {
         ...playerBox,
-        x: positionXRef._value + gapSize,
-        y: positionYRef._value + gapSize,
+        x: positionXRef._value,
+        y: positionYRef._value,
       };
 
       collisionBoxes.forEach((box) => {
@@ -86,23 +82,23 @@ export default function Engine() {
           // Enforce boundaries
           switch (box.type) {
             case "floor":
-              if (nextY > box.y - (playerBox.height + gapSize)) {
-                nextY = box.y - (playerBox.height + gapSize);
+              if (nextY > box.y - playerBox.height) {
+                nextY = box.y - playerBox.height;
               }
               break;
             case "ceiling":
-              if (nextY < box.y + (playerBox.height + gapSize)) {
+              if (nextY < box.y + playerBox.height) {
                 nextY = box.y + box.height;
               }
               break;
             case "leftWall":
-              if (nextX < box.x + (playerBox.width + gapSize)) {
+              if (nextX < box.x + (playerBox.width)) {
                 nextX = box.x + box.width;
               }
               break;
             case "rightWall":
-              if (nextX > box.x - (playerBox.width + gapSize)) {
-                nextX = box.x - (playerBox.width + gapSize);
+              if (nextX > box.x - (playerBox.width)) {
+                nextX = box.x - playerBox.width;
               }
               break;
           }
