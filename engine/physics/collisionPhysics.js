@@ -1,11 +1,7 @@
 import { Dimensions, Platform } from "react-native";
 
 // Configuration files
-import gapConfig from "../config/gapConfig";
 import physicsConfig from "../config/physicsConfig";
-
-// Gap size between floor and player (Platform specific)
-const gapSize = Platform.OS === "web" ? gapConfig.web : gapConfig.default;
 
 // Screen dimensions
 export const screenWidth = Dimensions.get("window").width;
@@ -97,7 +93,7 @@ export const handleCollision = (
       if (velocityYRef.current > 0) {
         if (Math.abs(velocityYRef.current) < 1) {
           velocityYRef.current = 0;
-          positionYRef.setValue(box.y - playerBox.height - gapSize);
+          positionYRef.setValue(box.y - playerBox.height);
         } else {
           velocityYRef.current = -velocityYRef.current * bounceFactor; // Reverse vertical velocity and reduce by bounce factor
         }
