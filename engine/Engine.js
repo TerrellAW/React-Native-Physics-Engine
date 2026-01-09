@@ -92,12 +92,12 @@ export default function Engine() {
               }
               break;
             case "leftWall":
-              if (nextX < box.x + (playerBox.width)) {
+              if (nextX < box.x + playerBox.width) {
                 nextX = box.x + box.width;
               }
               break;
             case "rightWall":
-              if (nextX > box.x - (playerBox.width)) {
+              if (nextX > box.x - playerBox.width) {
                 nextX = box.x - playerBox.width;
               }
               break;
