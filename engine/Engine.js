@@ -82,8 +82,8 @@ export default function Engine() {
           // Enforce boundaries
           switch (box.type) {
             case "floor":
-              if (nextY > box.y - (playerBox.height)) {
-                nextY = box.y - (playerBox.height);
+              if (nextY > box.y - playerBox.height) {
+                nextY = box.y - playerBox.height;
               }
               break;
             case "ceiling":
