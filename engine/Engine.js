@@ -87,7 +87,7 @@ export default function Engine() {
               }
               break;
             case "ceiling":
-              if (nextY < box.y + (playerBox.height)) {
+              if (nextY < box.y + playerBox.height) {
                 nextY = box.y + box.height;
               }
               break;
